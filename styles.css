@@ -1,0 +1,96 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    font-family: 'Arial', sans-serif;
+}
+
+.calculator {
+    background: #2c3e50;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    width: 90%; /* Responsive width */
+    max-width: 320px; /* Maximum width for larger screens */
+}
+
+#display {
+    width: calc(100% - 30px); /* Adjust width to account for padding */
+    height: 60px;
+    background: #34495e;
+    color: #ecf0f1;
+    border: none;
+    text-align: right;
+    padding: 15px;
+    font-size: 28px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 15px; /* Smaller padding for smaller screens */
+    font-size: 18px; /* Smaller font size for smaller screens */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button.operator {
+    background: #e67e22;
+}
+
+button.operator:hover {
+    background: #d35400;
+}
+
+button.equals {
+    grid-column: span 1; /* Equals button takes one column */
+    background: #2ecc71;
+}
+
+button.equals:hover {
+    background: #27ae60;
+}
+
+button.zero {
+    grid-column: span 2; /* Zero button spans two columns */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+    .calculator {
+        padding: 15px;
+    }
+
+    #display {
+        font-size: 24px; /* Smaller font size for smaller screens */
+        height: 50px; /* Smaller height for smaller screens */
+    }
+
+    button {
+        padding: 12px; /* Smaller padding for smaller screens */
+        font-size: 16px; /* Smaller font size for smaller screens */
+    }
+}
